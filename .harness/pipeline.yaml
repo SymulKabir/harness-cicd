@@ -37,12 +37,12 @@ pipeline:
                   name: npm install
                   identifier: npm_install
                   spec:
-                    shell: Sh
+                    shell: Bash
                     command: npm install
               - step:
                   type: Run
                   name: start app
                   identifier: start_app
                   spec:
-                    shell: Sh
+                    shell: Bash
                     command: node index.js
