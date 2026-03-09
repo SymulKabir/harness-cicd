@@ -1,7 +1,15 @@
-const http = require("http")
+const express = require("express");
+const app = express();
+const PORT = 3000;
 
-const server = http.createServer((req, res) => {
-  res.end("Hello World from Harness CI/CD")
-})
+// Use a proper wildcard path
+app.get("/", (req, res) => {
+  res.send("Hello World from Harness CI/CD");
+});
+app.get("/:id", (req, res) => {
+  res.send("Hello World from Harness CI/CD");
+});
 
-server.listen(3000)
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
